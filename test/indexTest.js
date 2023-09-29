@@ -20,6 +20,8 @@ describe('index.js', function () {
 
         expect(cats).to.have.ordered.members(["Milo", "Otis", "Garfield", "Ralph"]);
       });
+      function destructivelyAppendCat["Milo", "Otis", "Garfield"];
+      destructivelyAppendCat.push("Ralph");
     });
 
     describe('destructivelyPrependCat(name)', function () {
@@ -28,7 +30,10 @@ describe('index.js', function () {
 
         expect(cats).to.have.ordered.members(["Bob", "Milo", "Otis", "Garfield"]);
       });
-    });
+    
+      function destructivelyPrependCat(catName) {
+      destructivelyPrependCat.unshift("Bob");
+    };
 
     describe('destructivelyRemoveLastCat()', function () {
       it('removes the last cat from the cats array', function () {
@@ -36,6 +41,16 @@ describe('index.js', function () {
 
         expect(cats).to.have.ordered.members(["Milo", "Otis"]).and.to.not.include('Garfield');
       });
+      function destructivelyRemoveLastCat(catArray) {
+        if (catArray.length > 0) {
+          catArray.pop();
+        }
+      }
+      
+      // Usage:
+      let cats = ["Milo", "Otis", "Garfield"];
+      destructivelyRemoveLastCat(cats);
+      
     });
 
     describe('destructivelyRemoveFirstCat()', function () {
